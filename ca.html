@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>cart</title>
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background-color: black;
+    }
+
+    body {
+      background-color: antiquewhite;
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .header {
+      overflow: hidden;
+      background-color: #927ef5;
+      padding: 20px 10px;
+    }
+
+    .header a {
+      float: left;
+      color: rgb(202, 223, 13);
+      text-align: center;
+      padding: 14px;
+      text-decoration: none;
+      font-size: 18px;
+      line-height: 35px;
+      border-radius: 10px;
+    }
+
+    .header a.logo {
+      font-size: 25px;
+      font-weight: bold;
+    }
+
+    .header a:hover {
+      background-color: white;
+      color: black;
+    }
+
+    .header a.active {
+      background-color: dodgerblue;
+      color: white;
+    }
+
+    .header-right {
+      float: right;
+    }
+
+    @media screen and (max-width: 700px) {
+      .header a {
+        float: none;
+        display: block;
+        text-align: center;
+      }
+
+      .header-right {
+        float: none;
+      }
+    }
+
+
+    * {
+      box-sizing: border-box;
+    }
+
+
+    .container {
+      padding: 16px;
+      background-color: antiquewhite;
+    }
+
+
+    input[type=text],
+    input[type=password],
+    input[type=tel] {
+      width: 100%;
+      padding: 15px;
+      margin: 5px 0 22px 0;
+      display: inline-block;
+      border: none;
+      background: #f1f1f1;
+    }
+
+    input[type=text]:focus,
+    input[type=password]:focus,
+    input[type=tel]:focus {
+      background-color: #ddd;
+      outline: none;
+    }
+
+
+    hr {
+      border: 1px solid #f1f1f1;
+      margin-bottom: 25px;
+    }
+
+
+    .registerbtn {
+      background-color: #aa3e04;
+      color: white;
+      padding: 16px 20px;
+      margin: 8px 0;
+      border: none;
+      cursor: pointer;
+      width: 100%;
+      opacity: 0.9;
+    }
+
+    .registerbtn:hover {
+      opacity: 1;
+    }
+
+
+    a {
+      color: dodgerblue;
+    }
+
+
+    .signin {
+      background-color: #f1f1f1;
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="header">
+    <a href="#default" class="logo">BaKe ND CaKe</a>
+  </div>
+  <script>
+    function test() {
+      const email = document.getElementById("email");
+      const password = document.getElementById("psw");
+      const phoneNumber = document.getElementById("tel");
+      var format = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+      const name = document.getElementById("name");
+      if (!name.value.match(/^[A-Za-z]+$/)) {
+        alert("Name should be only in characters");
+        name.focus();
+        return false;
+      }
+      if (!phoneNumber.value.match(/^[1-9][0-9]{9}$/)) {
+        alert("Phone number must be 10 characters long number and first digit can't be 0!");
+        phoneNumber.focus();
+        return false;
+      }
+
+
+
+      if (!email.value.match(format)) {
+        alert("enter valid mail");
+        email.focus();
+        return false;
+      }
+
+      if (!password.value.match(/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$/)) {
+        alert("Passwords must contain:\na minimum of 1 lower case letter [a-z] and\na minimum of 1 upper case letter [A-Z] and\na minimum of 1 numeric character [0-9] and\n1 special character: ~`!@#$%^&*()-_+={}[]|\;:<>,./?\nat least 1 upper case, numeric, and special character must be EMBEDDED somewhere in the middle of the password, and not just be the first or the last character of the password string.");
+        password.focus();
+        return false;
+      }
+    }
+
+    function myFunction() {
+      var x = document.getElementById("psw");
+      if (x.type === "password") {
+        x.type = "text";
+      } else {
+        x.type = "password";
+      }
+    }
+
+  </script>
+
+  <form>
+    <div class="container">
+      <h1>Add to cart</h1>
+      <hr>
+      <label for="n"><b>Name</b></label>
+      <input type="text" placeholder="Enter the Name" name="name" id="name">
+      <label for="email"><b>Email</b></label>
+      <input type="text" placeholder="Enter Email" name="email" id="email" required>
+
+      <label for="psw"><b>Password</b></label>
+      <input type="password" placeholder="***" id="psw" value="pass" required>
+      <input type="checkbox" onclick="myFunction()">Show Password<br> <br>
+
+      <label for="psw"><b>Phone Number</b></label>
+      <input type="tel" id="tel" placeholder="+91" name="tel">
+      <label for="psw"><b>Date to be Delivered</b></label>
+      <input type="datetime-local" name="datetime" id="datetime" />
+    </div>
+  </form>
+  &nbsp;&nbsp;&nbsp;Please allow to know your location
+  <button onclick="getLocation()">Location</button>
+
+  <p id="demo"></p>
+
+  <script>
+    var x = document.getElementById("demo");
+
+    function getLocation() {
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition);
+      } else {
+        x.innerHTML = "Geolocation is not supported by this browser.";
+      }
+    }
+
+    function showPosition(position) {
+      x.innerHTML = "Latitude: " + position.coords.latitude +
+        "<br>Longitude: " + position.coords.longitude;
+    }
+  </script>
+  <hr>
+  <button type="submit" class="registerbtn" onclick="test()">Buy</button>
+  </div>
+
+
+</body>
+
+</html>

@@ -1,0 +1,48 @@
+[
+    {
+        "trDate": "2022-11-20",
+        "name": "Raj",
+        "gender": "m",
+        "bname":"chef venkat",
+        "date": "2001-07-22",
+        "orVal": 1.7,
+        "orSt": "packed"
+        
+    },
+    {
+        "trDate": "2022-11-04",
+        "name": "Seema",
+        "gender": "f",
+        "bname":"chef Nikitha",
+        "date": "2003-02-14",
+        "orVal": 2.3,
+        "orSt": "cancelled"
+    },
+    {
+        "trDate": "2022-10-31",
+        "name": "Joel",
+        "gender": "m",
+        "bname":"chef Rany",
+        "date": "2001-04-14",
+        "orVal": 4,
+        "orSt": "Packed"
+    },
+    {
+    "trDate": "2022-10-17",
+    "name": "Lavanya",
+    "gender": "f",
+    "bname":"chef binu",
+    "date": "2001-07-14",
+    "orVal": 3.1,
+    "orSt": "packing"
+},
+{
+"trDate": "2022-10-31",
+"name": "Mani",
+"gender": "m",
+"bname":"chef kevin",
+"date": "2001-09-11",
+"orVal": 2,
+"orSt": "Completed"
+}
+]

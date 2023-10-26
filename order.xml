@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="order.xsl" type="text/xsl" ?>
+
+<cakeorder xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="test1.xsd">
+    <order>
+        <name>whiteforest</name>
+        <price>600</price>
+        <baker>Chef ravi</baker>
+        <status> shipping</status>
+    </order>
+<order>
+        <name>black forest</name>
+        <price>450</price>
+        <baker> Chef Karu</baker>
+        <status>packed</status>
+    </order>
+    <order>
+        <name>Rainbow </name>
+        <price>1000</price>
+        <baker>Chef Gur</baker>
+        <status>Delivered</status>
+    </order>
+    <order>
+        <name>Blue current</name>
+        <price>800</price>
+        <baker>Chef nana</baker>
+        <status>packed</status>
+    </order>
+    <order>
+        <name>redvelvet</name>
+        <price>200</price>
+        <baker> Chef harry</baker>
+        <status>Delivered</status>
+    </order>
+</cakeorder>
